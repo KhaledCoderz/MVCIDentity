@@ -1,0 +1,32 @@
+﻿@model MVCIDentity.Models.ViewModel.UserRegisterViewModel
+@using (Html.BeginForm("Register","Account",FormMethod.Post))
+{
+    <div class="container-fluid ">
+        <div class="row flex-column">
+            <div class="col-md-4 mt-3">
+                @Html.LabelFor(item => item.UserName)
+                @Html.TextBoxFor(item => item.UserName)
+                @Html.ValidationMessageFor(item => item.UserName)
+            </div>
+
+            <div class="col-md-4 mt-3">
+                @Html.LabelFor(item => item.Email)
+                @Html.TextBoxFor(item => item.Email)
+                @Html.ValidationMessageFor(item => item.Email)
+            </div>
+
+            <div class="col-md-4 mt-3">
+                @Html.LabelFor(item => item.Password)
+                @Html.PasswordFor(item => item.Password)
+                @Html.ValidationMessageFor(item => item.Password)
+            </div>
+
+            <div class="col-md-4 mt-3">
+                @Html.LabelFor(item => item.ConfirmPassword)
+                @Html.PasswordFor(item => item.ConfirmPassword)
+                @Html.ValidationMessageFor(item => item.ConfirmPassword)
+            </div>
+        </div>
+        <button type="submit"> submit</button>
+    </div>
+}
