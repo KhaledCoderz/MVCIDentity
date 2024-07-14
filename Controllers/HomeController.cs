@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MVCIDentity.Controllers.Base;
 using MVCIDentity.Models;
 using System.Diagnostics;
 
 namespace MVCIDentity.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -16,7 +17,6 @@ namespace MVCIDentity.Controllers
 
         public IActionResult Index()
         {
-            var user = User;
             return View();
         }
 

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MVCIDentity.Data;
+using MVCIDentity.Helper;
 using MVCIDentity.Models;
 
 internal class Program
@@ -34,6 +35,10 @@ internal class Program
             );
 
         });
+
+
+
+        builder.Services.AddScoped<IUserClaimsPrincipalFactory<Identity>, CustomeUserClaimsPrincipalFactory>();
 
         var app = builder.Build();
 
