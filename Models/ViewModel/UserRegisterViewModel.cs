@@ -10,6 +10,24 @@ namespace MVCIDentity.Models.ViewModel
         [MaxLength(50)]
         public string UserName { get; set; }
 
+
+
+        [Required]
+        [Description("FirstName")]
+        [MaxLength(50)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Description("LastName")]
+        [MaxLength(50)]
+        public string LastName { get; set; }
+
+        [Required]
+        [Description("Address")]
+        [MaxLength(int.MaxValue)]
+        public string Address { get; set; }
+
+
         [Required]
         [EmailAddress]
         [Description("Email")]
