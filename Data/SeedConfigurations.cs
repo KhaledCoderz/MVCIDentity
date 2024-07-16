@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MVCIDentity.Data
 {
-    public class Configurations
+    public class SeedConfigurations
     {
         #region Seeding
 

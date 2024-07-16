@@ -1,16 +1,12 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<Identity> SignInManager
-@inject UserManager<Identity> UserManager
-
-@if (SignInManager.IsSignedIn(User))
+﻿@if (MVCIDentity.Helper.User.ContextWrapper.IsSignedIn())
 {
 
-    var user = await UserManager.GetUserAsync(User);
+    var user = MVCIDentity.Helper.User.ContextWrapper.GetCurrentUser();
     if (user is not null)
     {
         <span>
-            <span> @user.UserName</span> -
-            <span> @user.Email</span>
+            <span> @user.FirstName</span> -
+            <span> @user.LastName</span>
             <span class="mx-2"> @Html.ActionLink(" Edit Users", "EditUsers", "Account")</span>
         </span>
     }

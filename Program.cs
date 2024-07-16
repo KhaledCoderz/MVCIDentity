@@ -32,7 +32,15 @@ internal class Program
         {
             options.AddPolicy("AdminRolePolicy", policy =>
             policy.RequireRole("Admin")
+            ); 
+            
+            options.AddPolicy("UserRolePolicy", policy =>
+            policy.RequireRole("User")
             );
+
+            options.AddPolicy("UserAdminRolePolicy", policy =>
+           policy.RequireRole("User").RequireRole("Admin")
+           );
 
         });
 
@@ -45,12 +53,12 @@ internal class Program
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
+            app.UseExceptionHandler("/Error");
             app.UseMigrationsEndPoint();
         }
         else
         {
-            app.UseExceptionHandler("/Home/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
 
