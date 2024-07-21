@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MVCIDentity.Core.IServices;
 using MVCIDentity.Data;
 using MVCIDentity.Helper;
 using MVCIDentity.Models;
+using MVCIDentity.Service;
 
 internal class Program
 {
@@ -47,6 +49,7 @@ internal class Program
 
 
         builder.Services.AddScoped<IUserClaimsPrincipalFactory<Identity>, CustomeUserClaimsPrincipalFactory>();
+        builder.Services.AddScoped<ICarService, CarService>();
 
         var app = builder.Build();
 

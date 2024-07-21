@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Linq.Expressions;
-using System.Xml.Serialization;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Linq.Expressions;
 namespace MVCIDentity.Helper
 {
     public static class HtmlHelper
